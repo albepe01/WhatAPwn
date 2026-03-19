@@ -1,0 +1,25 @@
+# Docker image used for AFL++ execution
+image: aflplusplus/aflplusplus:latest
+
+# Per-execution timeout for the target (in milliseconds)
+exec_timeout_ms: 1000
+
+# Default environment variables applied to all AFL++ instances
+environment:
+  AFL_IMPORT_FIRST: "1"
+  AFL_FINAL_SYNC: "1"
+  AFL_NO_AFFINITY: "1"
+  AFL_TRY_AFFINITY: "0"
+  AFL_SKIP_CPUFREQ: "1"
+
+# Default variants for LLVM mode (no QEMU)
+variant_list_llvm:
+  - name: "default"
+    args: ""        # No extra options: standard afl-fuzz execution
+    env: {}
+
+# Default variants for QEMU mode (enabled via --qemu)
+variant_list_qemu:
+  - name: "default-qemu"
+    args: "-Q"      # Enables QEMU mode in afl-fuzz
+    env: {}

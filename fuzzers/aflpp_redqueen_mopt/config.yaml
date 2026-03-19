@@ -1,0 +1,25 @@
+# Docker image used for AFL++ execution
+image: aflplusplus/aflplusplus:latest
+
+# Per-execution timeout (ms)
+exec_timeout_ms: 1000
+
+# Base AFL++ environment
+environment:
+  AFL_IMPORT_FIRST: "1"
+  AFL_FINAL_SYNC: "1"
+  AFL_NO_AFFINITY: "1"
+  AFL_TRY_AFFINITY: "0"
+  AFL_SKIP_CPUFREQ: "1"
+
+# LLVM mode: MOpt + RedQueen
+variant_list_llvm:
+  - name: "mopt-redqueen"
+    args: "-L 0 -l 2AT"   # MOpt + RedQueen enabled
+    env: {}
+
+# QEMU mode: adds cmplog support
+variant_list_qemu:
+  - name: "mopt-redqueen-qemu"
+    args: "-Q -L 0 -c 0 -l 2AT"
+    env: {}

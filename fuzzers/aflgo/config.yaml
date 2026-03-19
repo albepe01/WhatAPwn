@@ -1,0 +1,15 @@
+# Docker image used for AFLGo execution
+image: "zjuchenyuan/aflgo:latest"
+
+# Workspace path inside the container
+workspace_dir: "/workspace"
+
+# Root directory where AFLGo is installed inside the container
+aflgo_root: "/aflgo"
+
+# Optional: custom path to autotargets script
+# autotargets_path: "/abs/path/to/repo/fuzzers/aflgo/autotargets.py"
+
+# Fuzzing timeout passed to AFLGo (-c flag)
+# Examples: "45m", "1h"
+fuzz_timeout: "45m"

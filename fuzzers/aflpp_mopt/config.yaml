@@ -1,0 +1,25 @@
+# Docker image used for AFL++ execution
+image: aflplusplus/aflplusplus:latest
+
+# Per-execution timeout for the target (in milliseconds)
+exec_timeout_ms: 1000
+
+# Default environment variables applied to all AFL++ instances
+environment:
+  AFL_IMPORT_FIRST: "1"
+  AFL_FINAL_SYNC: "1"
+  AFL_NO_AFFINITY: "1"
+  AFL_TRY_AFFINITY: "0"
+  AFL_SKIP_CPUFREQ: "1"
+
+# LLVM mode variant using MOpt mutation strategy
+variant_list_llvm:
+  - name: "mopt"
+    args: "-L 0"   # Enables MOpt optimization
+    env: {}
+
+# QEMU mode variant with MOpt
+variant_list_qemu:
+  - name: "mopt-qemu"
+    args: "-Q -L 0"
+    env: {}

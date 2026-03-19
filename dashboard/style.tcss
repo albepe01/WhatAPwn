@@ -1,0 +1,223 @@
+Screen {
+    background: #000000;
+    color: #00ff66;
+}
+
+.header {
+    content-align: center middle;
+    text-style: bold;
+    height: 3;
+    border: round green;
+    margin: 1 2;
+}
+
+.controls-box {
+    border: round #00aa55;
+    margin: 1 2;
+    padding: 0 1;
+    height: 5;
+}
+
+.controls {
+    layout: horizontal;
+    height: 3;
+
+    /* Properly center all child elements */
+    align-horizontal: center;
+    align-vertical: middle;
+
+    /* Do not use padding here, as it breaks the layout */
+    /* padding: 0 1; */
+}
+
+/* ---- BUTTONS ---- */
+
+.menu-btn {
+    background: green;
+    color: black;
+    text-style: bold;
+
+    width: 12;
+    height: 3;
+    border: tall green;
+
+    /* Removed left margin because it shifted everything to the right */
+    margin: 0;
+}
+
+/* Keep EXEC close to TRIAGE */
+#exec_btn {
+    margin-right: 1;
+}
+
+/* Add spacing between TRIAGE and the dropdown menus */
+#triage_btn {
+    margin-right: 1;
+}
+
+/* Keep LOGS aligned to the right */
+#logs_btn {
+    margin-left: 1;
+}
+
+/* Keep VULNS aligned to the right */
+#vulns_btn {
+    margin-left: 1;
+}
+
+/* Keep METRICS aligned to the right */
+#metrics_btn {
+    margin-left: 1;
+}
+
+/* ---- SELECT MENUS ---- */
+
+.menu {
+    width: 15%;
+    margin: 0;          /* No lateral margins */
+    margin-right: 1;    /* Uniform spacing between the two selects */
+}
+
+/* ---- TABLE ---- */
+
+.table-box {
+    border: round #00aa55;
+    margin: 1 2;
+    padding: 1;
+    height: 1fr;
+}
+
+DataTable {
+    border: solid #007744;
+    height: 100%;
+    color: #00ff99;
+    background: black;
+    padding: 1;
+    text-align: center;
+}
+
+DataTable > .datatable--header {
+    text-style: bold;
+    color: #00ffaa;
+    background: #002200;
+}
+
+/* ---- LOG VIEW ---- */
+
+#content_box {
+    height: 1fr;
+    width: 100%;
+}
+
+#table_wrapper,
+#log_wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+#log_console {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Outer container of the VULNS screen */
+#vuln_outer_box {
+    border: round #00aa55;   /* Same color as the METRICS box */
+    height: 1fr;
+    padding: 0 1;
+    margin: 1 2;
+}
+
+/* Left/right split layout */
+#vuln_split {
+    layout: horizontal;
+    height: 1fr;
+}
+
+/* Left column containing boxes 1, 2, and 3 */
+#vuln_left_column {
+    layout: vertical;
+    width: 3fr;
+}
+
+/* Right column (Area 4) */
+#area4_box {
+    width: 1fr;
+}
+
+/* Internal boxes (1, 2, 3, 4) with title centered on the border */
+.vuln-subbox {
+    border: round green;
+    padding: 1;
+    margin-bottom: 0;
+
+    /* Center the border title */
+    border-title-align: center;
+
+    /* Optional customizations:
+       border-title-style: bold;
+       border-title-color: #00ff66;
+       border-title-background: #000000;
+    */
+}
+
+/* Log console inside areas 1, 2, and 3 */
+.vuln-log {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+/* ------------------------------------------------------
+   CRASH LIST (Area 4)
+------------------------------------------------------- */
+
+/* Base styling for crash rows */
+.crash-item {
+    background: #1e1e1e;
+
+    border-top: none;                 /* No top border by default */
+    border-bottom: solid #444444;     /* Gray bottom separator */
+
+    margin: 0;
+    padding: 0;
+    min-height: 2;
+}
+
+/* Internal label containing the crash text */
+.crash-label {
+    content-align: left middle;
+    padding: 0 2;
+    background: transparent;
+}
+
+/* Header row: "Analyzed crashes: N" */
+.crash-header-item .crash-label {
+    padding-top: 1;                   /* Small top spacing */
+    padding-bottom: 1;
+    color: #00ffaa;                   /* Aqua green */
+    content-align: center middle;     /* Centered text */
+}
+
+/* First crash row always gets a top gray border */
+.crash-item.first-crash {
+    border-top: solid #444444;
+}
+
+/* If the first crash is selected, its top border becomes green */
+.crash-item.first-crash.crash-selected {
+    border-top: solid #00ffaa;
+}
+
+/* Selected crash: green bottom border and slightly lighter background */
+.crash-item.crash-selected {
+    border-bottom: solid #00ffaa;
+}
+
+/* Fill the inner area between borders for the selected crash */
+.crash-item.crash-selected .crash-label {
+    background: #262626;   /* Slightly lighter gray */
+}

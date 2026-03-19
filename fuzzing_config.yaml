@@ -1,0 +1,102 @@
+# Global timeout (seconds)
+global_timeout: 300 # or None  
+
+# list of fuzzers with per‑binary path, timeout, mem
+
+# Graybox fuzzers
+fuzzers:
+
+  aflpp_default:
+    path: bins/bin_aflpp
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_default_sanitized:
+    path: bins/bin_asan
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_fast:
+    path: bins/bin_aflpp
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_mopt:
+    path: bins/bin_aflpp
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_ngram4:
+    path: bins/bin_aflpp
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_ngram4_rare:
+    path: bins/bin_aflpp
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_redqueen:
+    path: bins/bin_cmplog
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_redqueen_mopt:
+    path: bins/bin_cmplog
+    timeout: None
+    mem_limit: 1g
+
+  aflgo:
+    path: bins/bin_aflpp
+    timeout: None
+    mem_limit: 1g
+
+  ecofuzz:
+    path: bins/bin_afl
+    timeout: None
+    mem_limit: 1g
+
+# Emulation fuzzers
+fuzzers-qemu:
+
+  aflpp_default:
+    path: bin_original
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_default_sanitized:
+    path: bin_original
+    timeout: None
+    mem_limit: 1g
+  
+  aflpp_fast:
+    path: bin_original
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_mopt:
+    path: bin_original
+    timeout: None
+    mem_limit: 1g
+  
+  aflpp_ngram4:
+    path: bin_original
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_ngram4_rare:
+    path: bin_original
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_redqueen:
+    path: bin_original
+    timeout: None
+    mem_limit: 1g
+
+  aflpp_redqueen_mopt:
+    path: bin_original
+    timeout: None
+    mem_limit: 1g
+
+  

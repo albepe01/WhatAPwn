@@ -1,0 +1,27 @@
+# Docker image used for AFL++ execution
+image: aflplusplus/aflplusplus:latest
+
+# Per-execution timeout (ms)
+exec_timeout_ms: 1000
+
+# Base AFL++ environment configuration
+environment:
+  AFL_IMPORT_FIRST: "1"
+  AFL_FINAL_SYNC: "1"
+  AFL_NO_AFFINITY: "1"
+  AFL_TRY_AFFINITY: "0"
+  AFL_SKIP_CPUFREQ: "1"
+
+# LLVM mode: NGRAM4 + rare power schedule
+variant_list_llvm:
+  - name: "ngram4-rare"
+    args: "-p rare"
+    env:
+      AFL_NGRAM_SIZE: "4"   # Enables n-gram coverage
+
+# QEMU mode: same strategy for binary-only targets
+variant_list_qemu:
+  - name: "ngram4-rare-qemu"
+    args: "-Q -p rare"
+    env:
+      AFL_NGRAM_SIZE: "4"

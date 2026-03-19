@@ -1,0 +1,25 @@
+# Docker image used for AFL++ execution
+image: aflplusplus/aflplusplus:latest
+
+# Per-execution timeout (ms)
+exec_timeout_ms: 1000
+
+# Base AFL++ environment
+environment:
+  AFL_IMPORT_FIRST: "1"
+  AFL_FINAL_SYNC: "1"
+  AFL_NO_AFFINITY: "1"
+  AFL_TRY_AFFINITY: "0"
+  AFL_SKIP_CPUFREQ: "1"
+
+# LLVM mode: RedQueen enabled
+variant_list_llvm:
+  - name: "redqueen"
+    args: "-l 2AT"   # Enable RedQueen mutation strategy
+    env: {}
+
+# QEMU mode: RedQueen + comparison logging (cmplog)
+variant_list_qemu:
+  - name: "redqueen-qemu"
+    args: "-Q -c 0 -l 2AT"   # -c enables cmplog for binary-only targets
+    env: {}

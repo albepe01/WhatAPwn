@@ -1,0 +1,50 @@
+# ============================================================
+# EcoFuzz configuration
+# ============================================================
+
+# Docker image used for EcoFuzz execution
+image: "zjuchenyuan/ecofuzz"
+
+# ============================================================
+# Timeout & Limits
+# ============================================================
+
+# Execution timeout for each test case (ms)
+exec_timeout_ms: 1000
+
+# Default memory limit (used if orchestrator passes "none")
+mem_limit_mb: 2048
+
+# Container polling interval (seconds)
+poll_interval_s: 2
+
+# ============================================================
+# Environment variables passed into container
+# ============================================================
+
+environment:
+  AFL_NO_AFFINITY: "1"
+  AFL_SKIP_BIN_CHECK: "0"
+  AFL_NO_UI: "1"
+  AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES: "1"
+  AFL_AUTORESUME: "1"
+  TZ: "UTC"
+  LANG: "C.UTF-8"
+  LC_ALL: "C.UTF-8"
+
+# ============================================================
+# Workspace mount points (handled by runner)
+# ============================================================
+
+workspace:
+  target_bind: "/workspace/target"
+  seeds_bind:  "/workspace/seeds"
+  out_bind:    "/workspace/out"
+  dict_bind:   "/workspace/dictionary"
+
+# ============================================================
+# Mode handling
+# ============================================================
+
+# EcoFuzz can auto-detect mode, but runner still allows --qemu
+mode: "auto"
