@@ -1,0 +1,6 @@
+autopoint
+libtool
+gettext
+libpopt-dev
+libpcap-dev
+zlib1g-dev
