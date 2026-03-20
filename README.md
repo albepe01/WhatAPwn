@@ -22,17 +22,6 @@ It enables scalable, reproducible fuzzing campaigns by orchestrating multiple fu
 
 ---
 
-## 🧠 Motivation
-
-Modern vulnerability research requires scalable and automated approaches.  
-WhatAPwn aims to simplify and standardize fuzzing workflows by providing:
-
-- A unified interface for multiple fuzzers  
-- Automated campaign management  
-- Reliable crash analysis and exploitability assessment  
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -135,13 +124,3 @@ Adding a new fuzzer is straightforward:
 Contributions are welcome. Feel free to open issues or submit pull requests.
 
 ---
-
-## 📄 License
-
-MIT License (or specify your license here)
-
----
-
-## 👤 Author
-
-**Alberto Pepe**
