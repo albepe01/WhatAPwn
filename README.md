@@ -41,7 +41,9 @@ WhatAPwn/
 
 - Docker  
 - Python 3.8+  
-- Linux environment (WSL supported)  
+- Linux environment (WSL supported)
+- XXD
+- LLVM
 
 ---
 
