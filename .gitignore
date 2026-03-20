@@ -1,5 +1,3 @@
-benchmarks/
 dashboard/__pycache__
 dashboard/app_splash.py
-logs/
 venv/
