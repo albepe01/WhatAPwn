@@ -146,17 +146,6 @@ To add a new fuzzer, follow these steps:
 
 ---
 
-## Future Work
-
-This project is still under development. We are continuously working on improvements and plan to add the following features:
-
-- Support for **non-ELF targets**  
-- **Distributed fuzzing** across multiple machines  
-- Integration with **symbolic execution tools**  
-- Enhanced **exploitability classification**
-
----
-
 ## Contributions
 
 As a thesis project, **WhatAPwn** is evolving with a focus on continuous improvement. Future updates will include:
