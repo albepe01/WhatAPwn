@@ -28,6 +28,7 @@ WhatAPwn/
 │── benchmarks/         # Benchmark targets
     │── libexif
     │── pdftotext
+    │── ...
 │── fuzzers/            # Fuzzer integrations (AFL++, AFLGo, etc.)
     │── aflgo
     │── aflpp
