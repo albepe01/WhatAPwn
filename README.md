@@ -36,7 +36,7 @@ WhatAPwn/
 │── dashboard/          # Platform's TUI files
 │── triaging/           # Crash analysis and exploitability checks
     │── qasan/             # QASAN's Dockerfile
-    │── exploitable        # Exploitable plugin main's directory (https://github.com/jfoote/exploitable)
+    │── exploitable        # Exploitable jfoote's plugin (https://github.com/jfoote/exploitable)
 │── run_fuzzers.py      # Main orchestrator script
 │── fuzzing_config.yaml
 ```
